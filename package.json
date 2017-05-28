@@ -1,0 +1,10 @@
+{
+  "name": "Node",
+  "version": "0.0.1",
+  "description": "Example Node.js project",
+  "dependencies": {
+    "mime": "~1.2.7"
+  },
+  "repository": "https://github.com/igorkislyuk/node",
+  "license": "MIT"
+}
