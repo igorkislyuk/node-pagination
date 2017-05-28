@@ -3,8 +3,11 @@
   "version": "0.0.1",
   "description": "Example Node.js project",
   "dependencies": {
-    "mime": "~1.2.7"
+    "mime": "^1.3.6",
+    "mysql": "^2.13.0",
+    "express": "^4.15.3",
+    "body-parser": "^1.17.2"
   },
-  "repository": "https://github.com/igorkislyuk/node",
+  "repository": "https://github.com/igorkislyuk/node-pagination",
   "license": "MIT"
 }
