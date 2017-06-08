@@ -6,7 +6,7 @@ exports.route = function (req, res) {
     let text = req.body.text || null;
 
     if (author !== null && text !== null) {
-        database.createMessage(databaseInstance, author, text, function (err) {
+        exports.database.createMessage(author, text, function (err) {
             if (err) {
                 throw err;
                 res.status(400);

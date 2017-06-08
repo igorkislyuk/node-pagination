@@ -18,12 +18,12 @@ exports.route = function (req, res) {
 
     if (sinceId === undefined && tillId === undefined) {
         // both are empty. Simple flow
-        database.simpleListing(databaseInstance, offset, limit, function (result) {
+        exports.database.simpleListing(offset, limit, function (result) {
             res.json(result);
             res.end();
         });
     } else {
-        database.listingInRange(databaseInstance, offset, limit, sinceId, tillId, function (result) {
+        exports.database.listingInRange(offset, limit, sinceId, tillId, function (result) {
             res.json(result);
             res.end();
         })

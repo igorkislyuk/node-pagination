@@ -43,41 +43,36 @@ exports.sync = function () {
     Message.sync();
 };
 
-exports.simpleListing = function (db, offset, limit, callback) {
-    // const query =
-    //     "SELECT messages.id, messages.author, messages.text, messages.date FROM Node.messages" +
-    //     " ORDER BY messages.date DESC" +
-    //     " LIMIT " + limit +
-    //     " OFFSET " + offset;
-    //
-    // db.query(query, function (err, rows) {
-    //         if (err) throw err;
-    //         parseData(rows, callback);
-    //     }
-    // );
+exports.simpleListing = function (offset, limit, callback) {
     Message
-        .findAll({})
+        .findAll({
+            limit: limit,
+            offset: offset,
+            order: [
+                ['date', 'DESC']
+            ]
+        })
         .then(messages => {
-            parseData()
+            parseData(messages, callback);
         })
         .catch(error => {
-
             // todo html page with error code
             console.log(error);
+            callback([]);
         })
 };
 
-function parseData(rows, callback) {
+function parseData(messages, callback) {
     let result = [];
 
-    for (const i in rows) {
-        const row = rows[i];
+    for (let i in messages) {
+        let message = messages[i];
 
-        const data = {
-            id: row.id,
-            author: unescape(row.author),
-            text: unescape(row.text),
-            date: row.date
+        let data = {
+            id: message.id,
+            author: unescape(message.author),
+            text: unescape(message.text),
+            date: message.date
         };
 
         result.push(data);
@@ -86,28 +81,28 @@ function parseData(rows, callback) {
     callback(result);
 }
 
-exports.listingInRange = function (db, offset, limit, since_id, till_id, callback) {
+exports.listingInRange = function (offset, limit, since_id, till_id, callback) {
 
-    var query =
-        "SELECT messages.id, messages.author, messages.text, messages.date" +
-        " FROM Node.messages";
-
-    if (since_id !== undefined && till_id !== undefined) {
-        query += " WHERE messages.id < " + since_id + " AND messages.id > " + till_id + " ORDER BY messages.id DESC";
-    } else {
-        if (since_id !== undefined) {
-            query += " WHERE messages.id < " + since_id;
-        } else {
-            query += " WHERE messages.id > " + till_id;
-        }
-        query += " ORDER BY messages.id DESC" + " LIMIT " + limit + " OFFSET " + offset;
-    }
-
-    db.query(query, function (err, rows) {
-            if (err) throw err;
-            parseData(rows, callback);
-        }
-    );
+    // var query =
+    //     "SELECT messages.id, messages.author, messages.text, messages.date" +
+    //     " FROM Node.messages";
+    //
+    // if (since_id !== undefined && till_id !== undefined) {
+    //     query += " WHERE messages.id < " + since_id + " AND messages.id > " + till_id + " ORDER BY messages.id DESC";
+    // } else {
+    //     if (since_id !== undefined) {
+    //         query += " WHERE messages.id < " + since_id;
+    //     } else {
+    //         query += " WHERE messages.id > " + till_id;
+    //     }
+    //     query += " ORDER BY messages.id DESC" + " LIMIT " + limit + " OFFSET " + offset;
+    // }
+    //
+    // db.query(query, function (err, rows) {
+    //         if (err) throw err;
+    //         parseData(rows, callback);
+    //     }
+    // );
 };
 
 exports.createMessage = function (author, text, callback) {
@@ -121,7 +116,7 @@ exports.createMessage = function (author, text, callback) {
         })
         .then(msg => {
             console.log('Message was successfully create with id = ' + msg.id);
-            callback(err);
+            callback();
         })
         .catch(err => {
             // todo page

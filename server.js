@@ -9,8 +9,12 @@ app.use(bodyParser.json());
 
 // routes
 let defaultRoute = require('./routes/default.js');
+
 let listingRoute = require('./routes/message/listing.js');
+listingRoute.database = database;
+
 let createRoute = require('./routes/message/create');
+createRoute.database = database;
 
 let port = 3000;
 
