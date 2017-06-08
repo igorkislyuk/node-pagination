@@ -1,3 +1,18 @@
+let uuidV4 = require('uuid/v4');
+let Sequelize = require('sequelize');
+let sequelize = new Sequelize('Node', 'root', 'root', {
+    host: 'localhost',
+    dialect: 'mysql',
+    pool: {
+        max: 1,
+        min: 0,
+        idle: 10000
+    }
+});
+
+let a = 'a';
+
+// uuidV4();
 exports.simpleListing = function (db, offset, limit, callback) {
     const query =
         "SELECT messages.id, messages.author, messages.text, messages.date FROM Node.messages" +

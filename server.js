@@ -1,5 +1,4 @@
-const http = require('http');
-const mysql = require('mysql');
+let http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const database = require('./private/database.js');
