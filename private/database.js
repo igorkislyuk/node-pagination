@@ -37,7 +37,6 @@ let Message = sequelize.define('message', {
 
 
 // exports
-exports.Model = Message;
 
 exports.sync = function () {
     Message.sync();
@@ -56,11 +55,66 @@ exports.simpleListing = function (offset, limit, callback) {
             parseData(messages, callback);
         })
         .catch(error => {
-            // todo html page with error code
             console.log(error);
             callback([]);
         })
 };
+
+exports.listingInRange = function (offset, limit, since_id, till_id, callback) {
+
+    if (isNaN(offset) || isNaN(limit)) {
+        parseData([], callback);
+    }
+
+    let data = {};
+    data.callback = callback;
+    data.limit = limit;
+    data.offset = offset;
+
+    const isValidSinceID = since_id !== undefined;
+    const isValidTillID = till_id !== undefined;
+
+    if (isValidSinceID && isValidTillID) {
+
+        listingForBothAnchors(since_id, till_id, callback);
+
+    } else if (isValidSinceID && !isValidTillID) {
+
+        data.isSinceAnchor = true;
+        data.identifier = since_id;
+        listingForOneAnchor(data);
+
+    } else if (!isValidSinceID && isValidTillID) {
+        data.isSinceAnchor = false;
+        data.identifier = till_id;
+
+        listingForOneAnchor(data);
+    }
+    else {
+        // simple paging
+        exports.simpleListing(offset, limit, callback);
+    }
+};
+
+exports.createMessage = function (author, text, callback) {
+
+    Message
+        .create({
+            id: uuidV4(),
+            text: text,
+            date: new Date(),
+            author: author
+        })
+        .then(msg => {
+            console.log('Message was successfully create with id = ' + msg.id);
+            callback();
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};
+
+// Inner functions
 
 function parseData(messages, callback) {
     let result = [];
@@ -161,58 +215,3 @@ function listingForOneAnchor(data) {
             console.log(error);
         })
 }
-
-exports.listingInRange = function (offset, limit, since_id, till_id, callback) {
-
-    if (isNaN(offset) || isNaN(limit)) {
-        parseData([], callback);
-    }
-
-    let data = {};
-    data.callback = callback;
-    data.limit = limit;
-    data.offset = offset;
-
-    const isValidSinceID = since_id !== undefined;
-    const isValidTillID = till_id !== undefined;
-
-    if (isValidSinceID && isValidTillID) {
-
-        listingForBothAnchors(since_id, till_id, callback);
-
-    } else if (isValidSinceID && !isValidTillID) {
-
-        data.isSinceAnchor = true;
-        data.identifier = since_id;
-        listingForOneAnchor(data);
-
-    } else if (!isValidSinceID && isValidTillID) {
-        data.isSinceAnchor = false;
-        data.identifier = till_id;
-
-        listingForOneAnchor(data);
-    }
-    else {
-        // simple paging
-        exports.simpleListing(offset, limit, callback);
-    }
-};
-
-exports.createMessage = function (author, text, callback) {
-
-    Message
-        .create({
-            id: uuidV4(),
-            text: text,
-            date: new Date(),
-            author: author
-        })
-        .then(msg => {
-            console.log('Message was successfully create with id = ' + msg.id);
-            callback();
-        })
-        .catch(err => {
-            // todo page
-            console.log(err);
-        });
-};
