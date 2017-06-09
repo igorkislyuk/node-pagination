@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ef3c5ed-008a-40b5-b34b-83cdeb246d42" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/support/initial.sql" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/pagination.paw" afterPath="$PROJECT_DIR$/support/pagination.paw" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/private/database.js" afterPath="$PROJECT_DIR$/private/database.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/default.js" afterPath="$PROJECT_DIR$/routes/default.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/message/create.js" afterPath="$PROJECT_DIR$/routes/message/create.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/message/listing.js" afterPath="$PROJECT_DIR$/routes/message/listing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,14 +18,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="node-pagination" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="database.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/private/database.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="85" column="4" lean-forward="false" selection-start-line="85" selection-start-column="7" selection-end-line="104" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="349">
+              <caret line="168" column="5" lean-forward="true" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
+              <folding>
+                <element signature="n#!!block;n#listingForBothAnchors#0" expanded="false" />
+                <element signature="e#4766#5147#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,8 +39,8 @@
       <file leaf-file-name="listing.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/message/listing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            <state relative-caret-position="180">
+              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -82,8 +84,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/routes/message/create.js" />
         <option value="$PROJECT_DIR$/routes/default.js" />
-        <option value="$PROJECT_DIR$/routes/message/listing.js" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/routes/message/listing.js" />
         <option value="$PROJECT_DIR$/private/database.js" />
       </list>
     </option>
@@ -385,7 +387,7 @@
       <workItem from="1495486344682" duration="8000" />
       <workItem from="1495486368460" duration="13000" />
       <workItem from="1495981412849" duration="11393000" />
-      <workItem from="1496957150926" duration="3106000" />
+      <workItem from="1496957150926" duration="6994000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1494451953397</created>
@@ -450,11 +452,27 @@
       <option name="project" value="LOCAL" />
       <updated>1496959243929</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add. Create &amp; simple listing">
+      <created>1496960331628</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1496960331628</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22850000" />
+    <option name="totallyTimeSpent" value="26738000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -470,7 +488,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31184056" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3130129" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3130129" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -496,11 +514,12 @@
     <MESSAGE value="Add. Simple node pagination" />
     <MESSAGE value="Add. SQL &amp; PAW files" />
     <MESSAGE value="Fix. Refactor to Routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix. Refactor to Routes" />
+    <MESSAGE value="Add. Create &amp; simple listing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add. Create &amp; simple listing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="39" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -525,7 +544,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#listingForBothAnchors#0" expanded="false" />
+            <element signature="e#4766#5147#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -689,17 +711,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/message/listing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        <state relative-caret-position="180">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/private/database.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="85" column="4" lean-forward="false" selection-start-line="85" selection-start-column="7" selection-end-line="104" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="349">
+          <caret line="168" column="5" lean-forward="true" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!block;n#listingForBothAnchors#0" expanded="false" />
+            <element signature="e#4766#5147#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
