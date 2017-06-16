@@ -1,9 +1,9 @@
-let uuidV4 = require('uuid/v4');
-let Sequelize = require('sequelize');
-let DataTypes = Sequelize.DataTypes;
+const uuidV4 = require('uuid/v4');
+const Sequelize = require('sequelize');
+const DataTypes = Sequelize.DataTypes;
 
 
-let sequelize = new Sequelize('Node', 'root', 'root', {
+const sequelize = new Sequelize('Node', 'root', 'root', {
     host: 'localhost',
     dialect: 'mysql',
     pool: {
@@ -14,7 +14,7 @@ let sequelize = new Sequelize('Node', 'root', 'root', {
 });
 
 
-let Message = sequelize.define('message', {
+const Message = sequelize.define('message', {
     id: {
         type: DataTypes.UUID,
         unique: true,
@@ -66,7 +66,7 @@ exports.listingInRange = function (offset, limit, since_id, till_id, callback) {
         parseData([], callback);
     }
 
-    let data = {};
+    const data = {};
     data.callback = callback;
     data.limit = limit;
     data.offset = offset;
@@ -117,12 +117,12 @@ exports.createMessage = function (author, text, callback) {
 // Inner functions
 
 function parseData(messages, callback) {
-    let result = [];
+    const result = [];
 
-    for (let i in messages) {
-        let message = messages[i];
+    for (const i in messages) {
+        const message = messages[i];
 
-        let data = {
+        const data = {
             id: message.id,
             author: unescape(message.author),
             text: unescape(message.text),
@@ -198,7 +198,7 @@ function listingForOneAnchor(data) {
             where: {id: data.identifier}
         })
         .then(message => {
-            let date = data.isSinceAnchor ? {$gte: message.date} : {$lte: message.date};
+            const date = data.isSinceAnchor ? {$gte: message.date} : {$lte: message.date};
 
             return Message
                 .findAll({

@@ -1,15 +1,18 @@
+const database = require('./../../database/');
 
 // main function from file always receive 2 params
-exports.route = function (req, res) {
+function main(req, res) {
 
-    let limit = parseInt(req.body.limit);
-    let offset = parseInt(req.body.offset);
+    const limit = parseInt(req.body.limit);
+    const offset = parseInt(req.body.offset);
 
-    let sinceId = req.body.since_id;
-    let tillId = req.body.till_id;
+    const sinceId = req.body.since_id;
+    const tillId = req.body.till_id;
 
-    exports.database.listingInRange(offset, limit, sinceId, tillId, function (result) {
+    database.listingInRange(offset, limit, sinceId, tillId, function (result) {
         res.json(result);
         res.end();
     });
-};
+}
+
+module.exports = main;

@@ -1,15 +1,16 @@
+const database = require('./../../database/');
 
-// main
-// todo: define how assign single function to whole `exports`
-exports.route = function (req, res) {
-    let author = req.body.author || null;
-    let text = req.body.text || null;
+function main(req, res) {
+    const author = req.body.author || null;
+    const text = req.body.text || null;
 
     if (author !== null && text !== null) {
-        exports.database.createMessage(author, text, function (err) {
+        database.createMessage(author, text, function (err) {
             if (err) {
-                throw err;
                 res.status(400);
+                res.end();
+
+                throw err;
             } else {
                 res.status(200);
             }
@@ -19,4 +20,6 @@ exports.route = function (req, res) {
         res.status(400);
         res.end();
     }
-};
+}
+
+module.exports = main;
