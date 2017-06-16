@@ -1,4 +1,4 @@
-const database = require('./../../database/');
+const database = require('database');
 
 // main function from file always receive 2 params
 function main(req, res) {

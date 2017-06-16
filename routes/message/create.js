@@ -1,4 +1,4 @@
-const database = require('./../../database/');
+const database = require('database');
 
 function main(req, res) {
     const author = req.body.author || null;
