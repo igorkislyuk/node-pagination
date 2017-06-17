@@ -1,7 +1,9 @@
+// common
 const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 
+// locals
 const database = require('local_database');
 
 // express
@@ -11,12 +13,14 @@ app.use(bodyParser.json());
 // routes
 const routes = require('local_routes');
 
-// port configuration
-const port = 3000;
+// configuration
+const mode = process.env.NODE_ENV || 'development';
+const config = require('./config.json')[mode];
 
-app.listen(port, function () {
+// main
+app.listen(config.port, function () {
     database.sync();
-    console.log('Server running at port 3000');
+    console.info('Server running at port ' + config.port);
 });
 
 app.get('/', routes.default);

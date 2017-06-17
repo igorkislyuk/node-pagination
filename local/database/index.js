@@ -2,13 +2,18 @@ const uuidV4 = require('uuid/v4');
 const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
 
-const sequelize = new Sequelize('Node', 'root', 'root', {
-    host: 'localhost',
-    dialect: 'mysql',
+// config
+const mode = process.env.NODE_ENV || 'development';
+const config = require('./config.json')[mode];
+
+const sequelize = new Sequelize(config.database, config.username, config.password, {
+    host: config.host,
+    port: config.port,
+    dialect: config.dialect,
     pool: {
-        max: 1,
-        min: 0,
-        idle: 10000
+        max: config.pool.max,
+        min: config.pool.min,
+        idle: config.pool.idle
     }
 });
 
