@@ -1,4 +1,3 @@
-const uuidV4 = require('uuid/v4');
 const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
 
@@ -21,8 +20,7 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
 const Message = sequelize.define('message', {
     id: {
         type: DataTypes.UUID,
-        unique: true,
-        allowNull: false,
+        defaultValue: Sequelize.UUIDV4,
         primaryKey: true
     },
     text: {
@@ -37,6 +35,13 @@ const Message = sequelize.define('message', {
         type: DataTypes.STRING,
         allowNull: false
     }
+}, {
+    indexes: [
+        {
+            name: 'date_index',
+            fields: ['date']
+        }
+    ]
 });
 
 
@@ -104,7 +109,6 @@ exports.createMessage = function (author, text, callback) {
 
     Message
         .create({
-            id: uuidV4(),
             text: text,
             date: new Date(),
             author: author
