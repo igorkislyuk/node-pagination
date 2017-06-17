@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ef3c5ed-008a-40b5-b34b-83cdeb246d42" name="Default" comment="Fix. Close #1">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/local/database/config.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+    <list default="true" id="6ef3c5ed-008a-40b5-b34b-83cdeb246d42" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/pagination.paw" afterPath="$PROJECT_DIR$/support/pagination.paw" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local/database/index.js" afterPath="$PROJECT_DIR$/local/database/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -402,7 +398,7 @@
       <workItem from="1496957150926" duration="8140000" />
       <workItem from="1497620019565" duration="2786000" />
       <workItem from="1497712784248" duration="185000" />
-      <workItem from="1497712983359" duration="3839000" />
+      <workItem from="1497712983359" duration="3848000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1494451953397</created>
@@ -516,11 +512,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497715817232</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fix. Close #1">
+      <created>1497716962547</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1497716962547</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34694000" />
+    <option name="totallyTimeSpent" value="34703000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -577,7 +580,8 @@
     <MESSAGE value="Fix. Solve problem with modules using submodules" />
     <MESSAGE value="Add. Replace simple require with node modules" />
     <MESSAGE value="Update. Readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update. Readme" />
+    <MESSAGE value="Fix. Close #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix. Close #1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
