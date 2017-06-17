@@ -1,4 +1,5 @@
-const database = require('database');
+
+const database = require('local_database');
 
 function main(req, res) {
     const author = req.body.author || null;

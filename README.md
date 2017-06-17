@@ -11,3 +11,18 @@
 
 * **author** - author of message. String. Required
 * **text** - message text. String. Required
+
+## Problems & Proposals
+
+#### Разбиение логики приложения и устранение `require(../../../../your-module)`
+
+#### Изменение
+
+
+// const defaultRoute = require('./local/routes/index.js');
+
+// const listingRoute = require('./local/routes/message/listing.js');
+// listingRoute.database = database;
+
+// const createRoute = require('./local/routes/message/create');
+// createRoute.database = database;

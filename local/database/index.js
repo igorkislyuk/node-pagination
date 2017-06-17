@@ -2,7 +2,6 @@ const uuidV4 = require('uuid/v4');
 const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
 
-
 const sequelize = new Sequelize('Node', 'root', 'root', {
     host: 'localhost',
     dialect: 'mysql',
