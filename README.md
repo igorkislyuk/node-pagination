@@ -16,8 +16,7 @@
 
 #### Разбиение логики приложения и устранение `require('../routes/message/create')`
 
-С целью повышения читаемости кода возможно заменить обычное подключение файлов `*.js`
-на использование модулей `npm`. Располагать все локальные модули следует в папке `local`.
+С целью повышения читаемости кода возможно заменить обычное подключение файлов `*.js` на использование модулей `npm`. Располагать все локальные модули следует в папке `local`.
 
 #### Пример с ипользованием `routes`
 
@@ -26,12 +25,8 @@
 ```js
 // routes
 const defaultRoute = require('./routes/default.js');
-
 const listingRoute = require('./routes/message/listing.js');
-
 const createRoute = require('./routes/message/create');
-
-...
 
 app.get('/', defaultRoute);
 app.post('/message/create', createRoute);
