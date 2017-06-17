@@ -2,7 +2,7 @@ const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const database = require('./local/database/index.js');
+const database = require('local_database');
 
 // express
 const app = express();
